@@ -7,7 +7,7 @@ function checkBoxes() {
 
   boxes.forEach((box) => {
     const boxTop = box.getBoundingClientRect().top;
-    console.log(boxTop, triggerBottom);
+
     if (boxTop < triggerBottom) {
       box.classList.add('show');
     } else {
