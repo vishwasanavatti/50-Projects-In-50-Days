@@ -1,8 +1,6 @@
 const tagsElement = document.getElementById('tags');
 const textArea = document.getElementById('textarea');
 
-textArea.focus();
-
 textArea.addEventListener('keyup', (e) => {
   createTags(e.target.value);
 
@@ -45,10 +43,9 @@ function randomSelect() {
 
   setTimeout(() => {
     clearInterval(interval);
-    setTimeout(() => {
-      const randomTag = pickRandomTag();
-      highlightTag(randomTag);
-    });
+
+    const randomTag = pickRandomTag();
+    highlightTag(randomTag);
   }, times * 100);
 }
 
