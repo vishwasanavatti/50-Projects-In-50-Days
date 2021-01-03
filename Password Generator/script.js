@@ -35,7 +35,7 @@ function generatePassowrd(lower, upper, number, symbol, length) {
   const typesCount = lower + upper + number + symbol;
   //generating array as 0: {lower: true} 1: {upper: false} and filtering to get values that are true
   const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(
-    (item) => Object.values(item)[0]
+    (item) => Object.values(item)[0] //taking first value of array so [0]
   );
   if (typesCount === 0) {
     return '';
@@ -43,7 +43,7 @@ function generatePassowrd(lower, upper, number, symbol, length) {
 
   for (let i = 0; i < length; i += typesCount) {
     typesArr.forEach((type) => {
-      const funcName = Object.keys(type)[0];
+      const funcName = Object.keys(type)[0]; //taking first value of array so [0]
       generatedPassword += randomFunc[funcName]();
     });
   }
